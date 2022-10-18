@@ -1,12 +1,12 @@
 package com.example.sqlitedatabase;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        idView = (TextView) findViewById(R.id.productID);
-        productBox = (EditText) findViewById(R.id.productName);
-        skuBox = (EditText) findViewById(R.id.productSku);
+        idView = findViewById(R.id.productID);
+        productBox = findViewById(R.id.productName);
+        skuBox = findViewById(R.id.productSku);
     }
 
     public void newProduct (View view) {
@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         Product product = new Product(productBox.getText().toString(), sku);
 
-        // TODO: add to database
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        dbHandler.addProduct(product);
 
         productBox.setText("");
 
@@ -40,30 +41,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void lookupProduct (View view) {
 
-        // TODO: get from Database
-        Product product = null;
+
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        Product product = dbHandler.findProduct(productBox.getText().toString());
 
         if (product != null) {
             idView.setText(String.valueOf(product.getID()));
             skuBox.setText(String.valueOf(product.getSku()));
         } else {
-            idView.setText("No Match Found");
+            idView.setText(R.string.noMatch);
         }
     }
 
 
     public void removeProduct (View view) {
 
-        // TODO: remove from database
-        boolean result = false;
+        MyDBHandler dbHandler = new MyDBHandler(this);
+        boolean result = dbHandler.deleteProduct(productBox.getText().toString());
 
         if (result) {
-            idView.setText("Record Deleted");
+            idView.setText(R.string.Deleted);
             productBox.setText("");
             skuBox.setText("");
         }
         else
-            idView.setText("No Match Found");
+            idView.setText(R.string.noMatch);
     }
 
     public void about(View view) {

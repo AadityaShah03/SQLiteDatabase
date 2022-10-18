@@ -17,9 +17,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Databse Project - Introduction to Android Course" />
+            android:text="@string/databse_project_introduction_to_android_course" />
 
     </LinearLayout>
 

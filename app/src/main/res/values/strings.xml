@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SQLiteDatabase</string>
+    <string name="databse_project_introduction_to_android_course">Databse Project - Introduction to Android Course</string>
+    <string name="product_id">Product ID:</string>
+    <string name="not_assigned">Not Assigned</string>
+    <string name="product_name">Product Name:</string>
+    <string name="stock_keeping_unit">Stock Keeping Unit:</string>
+    <string name="about">About</string>
+    <string name="product_Name">Product Name</string>
+    <string name="product_sku">Product SKU</string>
+    <string name="add">Add</string>
+    <string name="find">Find</string>
+    <string name="delete">Delete</string>
+    <string name="noMatch">No Match Found</string>
+    <string name="Deleted">Record Deleted</string>
 </resources>
