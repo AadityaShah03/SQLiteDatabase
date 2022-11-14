@@ -20,6 +20,8 @@
             android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:stretchColumns="2">
 
             <TableRow
@@ -30,14 +32,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
-                    android:text="@string/product_id" />
+                    android:text="Product ID:" />
 
                 <TextView
                     android:id="@+id/productID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="2"
-                    android:text="@string/not_assigned" />
+                    android:text="Not Assigned" />
 
             </TableRow>
 
@@ -50,19 +52,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
-                    android:text="@string/product_name" />
+                    android:text="Product Name:" />
 
                 <EditText
 
                     android:id="@+id/productName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:hint="@string/product_Name"
-                    android:importantForAutofill="no"
-                    android:inputType="textShortMessage"
-                    android:textColorHint="#757575"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:layout_column="2" />
             </TableRow>
 
             <TableRow
@@ -73,19 +70,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
-                    android:text="@string/stock_keeping_unit" />
+                    android:text="Stock Keeping Unit:" />
 
                 <EditText
 
                     android:id="@+id/productSku"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:hint="@string/product_sku"
-                    android:importantForAutofill="no"
-                    android:inputType="textShortMessage"
-                    android:textColorHint="#757575"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:layout_column="2" />
             </TableRow>
 
         </TableLayout>
@@ -93,6 +85,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tableLayout"
+            android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
             <Button
@@ -101,8 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="newProduct"
-                android:text="@string/add"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:text="Add" />
 
 
             <Button
@@ -111,8 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="lookupProduct"
-                android:text="@string/find"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:text="Find" />
 
 
             <Button
@@ -121,8 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="removeProduct"
-                android:text="@string/delete"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:text="Delete" />
 
         </LinearLayout>
 
@@ -130,9 +121,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:onClick="about"
-            android:text="@string/about" />
+            android:text="About" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
